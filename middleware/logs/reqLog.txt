@@ -45,3 +45,5 @@
 20221104	18:09:22	586d1a97-e03b-40ab-b168-c9505447eaf8	POST	undefined	/register
 20221104	18:09:59	38994868-1580-471b-adf5-78077378aa7d	POST	undefined	/register
 20221104	18:11:06	1967015e-8d24-48ab-b7b0-a3ebb2568fd1	POST	undefined	/auth
+20221105	12:18:25	8244a477-bd78-4e21-a7b8-96d67830d1ef	GET	undefined	/wordsDB.json
+20221105	12:26:36	907bf35d-ecc8-415a-9665-5c89f8468c96	GET	undefined	/wordsDB.json
