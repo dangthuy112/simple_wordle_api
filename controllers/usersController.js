@@ -1,6 +1,6 @@
 const User = require('../model/User');
 
-const updateUser = async (req, res) => {
+const updateHistory = async (req, res) => {
     if (!req?.body?.id) {
         return res.status(400).json({ 'message': 'ID parameter is required.' });
     }
@@ -8,10 +8,21 @@ const updateUser = async (req, res) => {
     const user = await User.findOne({ _id: req.body.id }).exec();
     if (!user) return res.status(204).json({ 'message': `No user matches ID${req.body.id}` });
 
-    user.previousGames = req.body.previousGames;
+    user.history = req.body.history;
 
     const result = await user.save();
     res.json(result);
+}
+
+const getHistory = async (req, res) => {
+    if (!req?.params?.id) {
+        return res.status(400).json({ 'message': 'ID parameter is required.' });
+    }
+
+    const user = await User.findOne({ _id: req.body.id }).exec();
+    if (!user) return res.status(204).json({ 'message': `No user matches ID${req.body.id}` });
+
+    res.json(user.history);
 }
 
 const getUser = async (req, res) => {
@@ -25,4 +36,4 @@ const getUser = async (req, res) => {
     res.json(user);
 }
 
-module.exports = { updateUser }
+module.exports = { updateHistory, getHistory, getUser }
