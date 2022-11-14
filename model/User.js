@@ -10,7 +10,7 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    previousGames: {
+    history: {
         type: Array,
         required: true
     }

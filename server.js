@@ -34,6 +34,7 @@ app.use('/', express.static(path.join(__dirname, '/public')));
 app.use('/', require('./routes/root'));
 app.use('/auth', require('./routes/auth'));
 app.use('/register', require('./routes/register'));
+app.use('/users', require('./routes/api/users'));
 
 //catch all other pages and redirect to error
 app.all('*', (req, res) => {
